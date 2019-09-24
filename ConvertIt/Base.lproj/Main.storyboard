@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Miles" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m08-mH-q24">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m08-mH-q24">
                                 <rect key="frame" x="256" y="40" width="103" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="103" id="6xc-Bc-DJF"/>
@@ -55,6 +55,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <connections>
+                                    <action selector="userInputChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="R8Q-Ee-EcB"/>
+                                </connections>
                             </textField>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GBl-Rf-uZd">
                                 <rect key="frame" x="16" y="169" width="343" height="144"/>
@@ -94,6 +97,9 @@
                                             <segment title="None"/>
                                         </segments>
                                         <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="decimalSelected:" destination="BYZ-38-t0r" eventType="valueChanged" id="ReO-l0-Ktr"/>
+                                        </connections>
                                     </segmentedControl>
                                 </subviews>
                                 <constraints>
@@ -101,7 +107,7 @@
                                     <constraint firstAttribute="width" constant="288.32999999999998" id="odj-F4-V1N"/>
                                 </constraints>
                             </stackView>
-                            <segmentedControl hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="jJP-3L-9Hw">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="jJP-3L-9Hw">
                                 <rect key="frame" x="16" y="37" width="32" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="g92-Ue-A7e"/>
@@ -112,6 +118,9 @@
                                     <segment title="-"/>
                                 </segments>
                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="signSegmentSelected:" destination="BYZ-38-t0r" eventType="valueChanged" id="7gX-YZ-ofq"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -140,9 +149,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="decimalSegment" destination="kE3-F3-iFM" id="8Qf-IP-wYi"/>
                         <outlet property="formulaPicker" destination="GBl-Rf-uZd" id="N7v-Vj-VZr"/>
                         <outlet property="fromUnitsLabel" destination="m08-mH-q24" id="3wO-yw-zro"/>
                         <outlet property="resultsLabel" destination="qAO-DX-JSb" id="jol-bb-7EE"/>
+                        <outlet property="signSegment" destination="jJP-3L-9Hw" id="pvq-y5-GxU"/>
                         <outlet property="userInput" destination="RWd-wc-HZl" id="QbR-ao-hIJ"/>
                     </connections>
                 </viewController>
